@@ -1,0 +1,74 @@
+From be3688fc475ece12d0fb8b7bcb993b053e91d3ec Mon Sep 17 00:00:00 2001
+From: Jan-Simon Moeller <jsmoeller@linuxfoundation.org>
+Date: Thu, 14 Jul 2022 18:31:47 +0200
+Subject: [PATCH] Build fixes for shared library under bitbake
+
+Signed-off-by: Jan-Simon Moeller <jsmoeller@linuxfoundation.org>
+---
+ Makefile | 18 ++++++++++++------
+ 1 file changed, 12 insertions(+), 6 deletions(-)
+
+diff --git a/Makefile b/Makefile
+index cd697b1..7918a82 100644
+--- a/Makefile
++++ b/Makefile
+@@ -1,5 +1,6 @@
+ # Locations of the dependencies
+ KALDI_ROOT?=$(HOME)/travis/kaldi
++KALDI_LIBS?=$(HOME)/travis/kaldi/libs
+ OPENFST_ROOT?=$(KALDI_ROOT)/tools/openfst
+ OPENBLAS_ROOT?=$(KALDI_ROOT)/tools/OpenBLAS/install
+ MKL_ROOT?=/opt/intel/mkl
+@@ -33,7 +34,7 @@ VOSK_HEADERS= \
+ 	vosk_api.h
+ 
+ CFLAGS=-g -O3 -std=c++17 -Wno-deprecated-declarations -fPIC -DFST_NO_DYNAMIC_LINKING \
+-       -I. -I$(KALDI_ROOT)/src -I$(OPENFST_ROOT)/include $(EXTRA_CFLAGS)
++       -I. -I$(KALDI_ROOT) -I$(OPENFST_ROOT) $(EXTRA_CFLAGS)
+ 
+ LDFLAGS=
+ 
+@@ -60,11 +61,11 @@ ifeq ($(USE_SHARED), 0)
+         $(OPENFST_ROOT)/lib/libfstngram.a
+ else
+     LDFLAGS += \
+-        -L$(KALDI_ROOT)/libs \
++        -L$(KALDI_LIBS) \
+         -lkaldi-online2 -lkaldi-decoder -lkaldi-ivector -lkaldi-gmm -lkaldi-tree \
+         -lkaldi-feat -lkaldi-lat -lkaldi-lm -lkaldi-rnnlm -lkaldi-hmm -lkaldi-nnet3 \
+         -lkaldi-transform -lkaldi-cudamatrix -lkaldi-matrix -lkaldi-fstext \
+-        -lkaldi-util -lkaldi-base -lfst -lfstngram
++        -lkaldi-util -lkaldi-base -lfst -lfstngram -shared -Wl,-soname,libvosk.so.0.3.42
+ endif
+ 
+ ifeq ($(HAVE_OPENBLAS_CLAPACK), 1)
+@@ -76,7 +77,8 @@ ifeq ($(HAVE_OPENBLAS_CLAPACK), 1)
+             $(OPENBLAS_ROOT)/lib/libblas.a \
+             $(OPENBLAS_ROOT)/lib/libf2c.a
+     else
+-        LDFLAGS += -lopenblas -llapack -lblas -lf2c
++        LDFLAGS += -lopenblas 
++        # -llapack -lblas -lf2c
+     endif
+ endif
+ 
+@@ -103,10 +105,14 @@ ifeq ($(HAVE_CUDA), 1)
+     LDFLAGS += -L$(CUDA_ROOT)/lib64 -lcuda -lcublas -lcusparse -lcudart -lcurand -lcufft -lcusolver -lnvToolsExt
+ endif
+ 
+-all: $(OUTDIR)/libvosk.$(EXT)
++all: $(OUTDIR)/libvosk.$(EXT).0.3.42
++$(OUTDIR)/libvosk.$(EXT).0.3.42: $(OUTDIR)/libvosk.$(EXT)
++	mv libvosk.${EXT} libvosk.${EXT}.0.3.42
++	ln -sf libvosk.${EXT}.0.3.42 libvosk.so
++
+ 
+ $(OUTDIR)/libvosk.$(EXT): $(VOSK_SOURCES:%.cc=$(OUTDIR)/%.o) $(LIBS)
+-	$(CXX) --shared -s -o $@ $^ $(LDFLAGS) $(EXTRA_LDFLAGS)
++	$(CXX) --shared -o $@ $^ $(LDFLAGS) $(EXTRA_LDFLAGS)
+ 
+ $(OUTDIR)/%.o: %.cc $(VOSK_HEADERS)
+ 	$(CXX) $(CFLAGS) -c -o $@ $<
+-- 
+2.33.0
+

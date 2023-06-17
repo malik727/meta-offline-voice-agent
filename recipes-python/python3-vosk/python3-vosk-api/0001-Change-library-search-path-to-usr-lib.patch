@@ -1,0 +1,26 @@
+From 6bbf9272cb367a06a4e4f3303628075df0b51085 Mon Sep 17 00:00:00 2001
+From: amanarora_09 <aman.arora9848@gmail.com>
+Date: Fri, 22 Jul 2022 13:27:07 +0200
+Subject: [PATCH] Change library search path to /usr/lib/
+
+Make the standard location known to the python library.
+
+Signed-off-by: amanarora_09 <aman.arora9848@gmail.com>
+---
+ python/vosk/__init__.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/python/vosk/__init__.py b/python/vosk/__init__.py
+index 45e2706..d260c61 100644
+--- a/vosk/__init__.py
++++ b/vosk/__init__.py
+@@ -23,7 +23,8 @@ def open_dll():
+             os.add_dll_directory(dlldir)
+         return _ffi.dlopen(os.path.join(dlldir, "libvosk.dll"))
+     elif sys.platform == 'linux':
+-        return _ffi.dlopen(os.path.join(dlldir, "libvosk.so"))
++        dlldir = os.path.abspath("/usr/lib/")
++        return _ffi.dlopen(os.path.join(dlldir, "libvosk.so.0"))
+     elif sys.platform == 'darwin':
+         return _ffi.dlopen(os.path.join(dlldir, "libvosk.dyld"))
+     else:

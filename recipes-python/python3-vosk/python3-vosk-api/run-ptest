@@ -1,0 +1,3 @@
+#!/bin/sh
+cd tests/
+./test_simple.py test.wav
