@@ -1,6 +1,5 @@
 SUMMARY = "Lightweight pipelining: using Python functions as pipeline jobs"
 HOMEPAGE = "https://github.com/joblib/joblib"
-AUTHOR = "Malik Talha <talhamalik727x@gmail.com>"
 LICENSE = "BSD-3-Clause"
 LIC_FILES_CHKSUM = "file://LICENSE.txt;md5=2e481820abf0a70a18011a30153df066"
 

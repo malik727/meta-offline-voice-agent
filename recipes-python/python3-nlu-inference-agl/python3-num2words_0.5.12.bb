@@ -1,5 +1,4 @@
 SUMMARY = "Modules to convert numbers to words"
-AUTHOR = "Malik Talha <talhamalik727x@gmail.com>"
 HOMEPAGE = "https://github.com/savoirfairelinux/num2words"
 LICENSE = "LGPL-2.1"
 LIC_FILES_CHKSUM = "file://COPYING;md5=f1b68565299e4b2403b8b3a87d0bcacf"

@@ -1,5 +1,4 @@
 SUMMARY = "PyYAML-based module to produce a bit more pretty and readable YAML-serialized data"
-AUTHOR = "Malik Talha <talhamalik727x@gmail.com>"
 HOMEPAGE = "https://github.com/mk-fg/pretty-yaml"
 LICENSE = "WTFPL"
 LIC_FILES_CHKSUM = "file://COPYING;md5=cb6845a9953333608b280507d7803cb3"

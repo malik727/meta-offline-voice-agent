@@ -1,6 +1,5 @@
 SUMMARY = "Python helpers to limit the number of threads used \
            in native libraries that handle their own internal threadpool"
-AUTHOR = "Malik Talha <talhamalik727x@gmail.com>"
 HOMEPAGE = "https://github.com/joblib/threadpoolctl"
 LICENSE = "BSD-3-Clause"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=8f2439cfddfbeebdb5cac3ae4ae80eaf"
