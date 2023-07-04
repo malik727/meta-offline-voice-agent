@@ -1,5 +1,3 @@
-inherit pypi setuptools3
-
 SUMMARY = "Ahead of Time compiler for numeric kernels"
 HOMEPAGE = "https://pythran.readthedocs.io/"
 LICENSE = "BSD-3-Clause"
@@ -9,6 +7,9 @@ SRC_URI[md5sum] = "e09e90484771937ab499380858bdb18d"
 SRC_URI[sha256sum] = "0b2cba712e09f7630879dff69f268460bfe34a6d6000451b47d598558a92a875"
 
 DEPENDS = "python3-gast"
+
+inherit pypi setuptools3
+
 RDEPENDS_${PN} = "python3-beniget python3-gast"
 
 BBCLASSEXTEND = "native"

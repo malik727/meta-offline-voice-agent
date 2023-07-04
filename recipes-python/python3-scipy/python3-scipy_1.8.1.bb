@@ -1,5 +1,3 @@
-inherit pypi setuptools3
-
 SUMMARY = "SciPy: Scientific Library for Python"
 HOMEPAGE = "https://www.scipy.org"
 LICENSE = "BSD-3-Clause"
@@ -22,6 +20,8 @@ DEPENDS += " \
 	${PYTHON_PN}-ply-native \
 	lapack \
 "
+
+inherit pypi setuptools3
 
 RDEPENDS:${PN} += " \
 	${PYTHON_PN}-numpy \
