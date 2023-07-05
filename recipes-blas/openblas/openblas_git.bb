@@ -10,6 +10,7 @@ SRC_URI = "\
 
 # tag 0.3.20
 SRCREV = "0b678b19dc03f2a999d6e038814c4c50b9640a4e"
+# SRCREV = "394a9fbafe9010b76a2615c562204277a956eb52"
 S = "${WORKDIR}/git"
 
 DEPENDS += "libgfortran"
@@ -59,3 +60,6 @@ do_install() {
 
 FILES:${PN}-dev = "${includedir} ${libdir}/lib${PN}.so"
 FILES:${PN}     = "${libdir}/*"
+
+# DEPENDS:remove:class-native = "libgfortran"
+BBCLASSEXTEND = "native"
