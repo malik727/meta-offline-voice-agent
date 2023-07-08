@@ -14,6 +14,18 @@ SRCREV = "cdd50d6cb545ba9674c1883068cf1fdc4f78f072"
 DEPENDS += " \
     python3-setuptools-native \
     python3-numpy-native \
+    python3-numpy \
+    python3-num2words \
+    python3-pyaml \
+    python3-requests \
+    python3-future \
+    python3-deprecation\
+    python3-scipy \
+    python3-scikit-learn \
+    python3-threadpoolctl \
+    python3-sklearn-crfsuite \
+    python3-snips-nlu-utils \
+    python3-snips-nlu-parsers \
     "
 
 inherit setuptools3
@@ -26,6 +38,7 @@ RDEPENDS_${PN} += " \
     python3-future \
     python3-deprecation \
     python3-scipy \
+    python3-scikit-learn \
     python3-threadpoolctl \
     python3-sklearn-crfsuite \
     python3-snips-nlu-utils \

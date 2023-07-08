@@ -1,6 +1,6 @@
 SUMMARY = "Modules to convert numbers to words"
 HOMEPAGE = "https://github.com/savoirfairelinux/num2words"
-LICENSE = "LGPL-2.1"
+LICENSE = "LGPL-2.1-only"
 LIC_FILES_CHKSUM = "file://COPYING;md5=f1b68565299e4b2403b8b3a87d0bcacf"
 
 PYPI_PACKAGE = "num2words"

@@ -11,7 +11,7 @@ SRC_URI = " \
 # License listed on https://alphacephei.com/vosk/models
 
 SRC_URI[model.sha256sum] = "30f26242c4eb449f948e42cb302dd7a686cb29a3423a8367f99ff41780942498"
-SRC_URI[license.sha256sum] = "69e091d43baae61f93c586d939ff7c1997415964621614add8aed06590193f47"
+SRC_URI[license.sha256sum] = "0184d051dd8821dbc0d8c93acaf5b8d9791004280c2f6821f1dd27033861d162"
 # SRC_URI[license.sha256sum] = "3fbe0ee1fa914cb4b1cea2f2d7201a155884727cd0afbb51a267b66a73cb3444" (previously)
 
 do_install() {

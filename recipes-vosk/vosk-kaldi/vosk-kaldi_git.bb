@@ -9,7 +9,7 @@ SRC_URI = "git://github.com/alphacep/kaldi.git;protocol=https;branch=vosk \
            "
 
 PV = "1.0+git${SRCPV}"
-#SRCREV = "76cd51d44c0a61e3905c35cadb2ec5f54f3e42d1"
+# SRCREV = "76cd51d44c0a61e3905c35cadb2ec5f54f3e42d1"
 SRCREV = "${AUTOREV}"
 
 S = "${WORKDIR}/git/src"
