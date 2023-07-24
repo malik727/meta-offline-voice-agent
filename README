@@ -6,7 +6,7 @@ meta-offline-voice-agent is the AGL Layer using Vosk API based on Kaldi ASR Tool
 
 WIP
 ========
-The layer in its current state contains the Vosk library, and is capable of recognizing speech, as verified from the test scripts contained in https://github.com/alphacep/vosk-api/tree/master/python/example.
+The layer in its current state contains the Vosk and Snips library, and is capable of recognizing speech, as verified from the test scripts contained in https://github.com/alphacep/vosk-api/tree/master/python/example.
 
 ### Working features:
 - [vosk-api (python)](https://github.com/alphacep/vosk-api/tree/master/python)
@@ -43,4 +43,5 @@ $ ptest-runner python3-vosk-api
 
 Maintainers:
 - Aman Arora <aman.arora9848@gmail.com>
+- Malik Talha <talhamalik727x@gmail.com>
 
