@@ -12,7 +12,7 @@ HOMEPAGE = "http://www.openblas.net/"
 SECTION = "libs"
 LICENSE = "BSD-3-Clause"
 
-DEPENDS = "make libgfortran patchelf-native"
+DEPENDS += "make libgfortran patchelf-native"
 
 LIC_FILES_CHKSUM = "file://LICENSE;md5=5adf4792c949a00013ce25d476a2abc0"
 

@@ -9,7 +9,7 @@ PYPI_PACKAGE = "threadpoolctl"
 SRC_URI[md5sum] = "e278b89038d9c9b39e7afafb8f5f87a3"
 SRC_URI[sha256sum] = "a335baacfaa4400ae1f0d8e3a58d6674d2f8828e3716bb2802c44955ad391380"
 
-DEPENDS = "python3-flit-core python3-setuptools-native"
+DEPENDS += "python3-flit-core python3-setuptools-native"
 
 inherit pypi setuptools3
 
@@ -25,5 +25,5 @@ setup(
 EOF
 }
 
-RDEPENDS_${PN} = "python3-flit-core"
+RDEPENDS_${PN} += "python3-flit-core"
 BBCLASSEXTEND = "native"

@@ -8,6 +8,6 @@ PYPI_PACKAGE = "html5tagger"
 SRC_URI[md5sum] = "5f2b0c139ecd9d00f314e9c8c2ad99b3"
 SRC_URI[sha256sum] = "84fa3dfb49e5c83b79bbd856ab7b1de8e2311c3bb46a8be925f119e3880a8da9"
 
-DEPENDS = "python3-setuptools-scm-native"
+DEPENDS += "python3-setuptools-scm-native"
 
 inherit pypi setuptools3

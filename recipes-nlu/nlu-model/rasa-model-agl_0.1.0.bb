@@ -1,7 +1,7 @@
 SUMMARY = "Dataset and a pre-trained model for the AGL voice assistant RASA based NLU intent engine."
 HOMEPAGE = "https://github.com/malik727/rasa-model-agl"
 LICENSE = "Apache-2.0"
-LIC_FILES_CHKSUM = "file://LICENSE;md5=ecab3ce0771d366e0f8e4ca058eb48e7"
+LIC_FILES_CHKSUM = "file://LICENSE;md5=2e01060a5557fe6a4b57f5ea6dc048d9"
 
 SRC_URI = " \
     git://github.com/malik727/rasa-model-agl;protocol=https;branch=main \

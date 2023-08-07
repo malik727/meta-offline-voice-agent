@@ -17,13 +17,16 @@ DEPENDS += " \
     python3-numpy \
     python3-num2words \
     python3-pyaml \
+    python3-six \
     python3-requests \
+    python3-deprecation \
     python3-future \
-    python3-deprecation\
     python3-scipy \
     python3-scikit-learn \
     python3-threadpoolctl \
     python3-sklearn-crfsuite \
+    python3-tqdm \
+    python3-packaging \
     python3-snips-nlu-utils \
     python3-snips-nlu-parsers \
     "
@@ -34,13 +37,16 @@ RDEPENDS_${PN} += " \
     python3-numpy \
     python3-num2words \
     python3-pyaml \
+    python3-six \
     python3-requests \
-    python3-future \
     python3-deprecation \
+    python3-future \
     python3-scipy \
     python3-scikit-learn \
     python3-threadpoolctl \
     python3-sklearn-crfsuite \
+    python3-tqdm \
+    python3-packaging \
     python3-snips-nlu-utils \
     python3-snips-nlu-parsers \
     "

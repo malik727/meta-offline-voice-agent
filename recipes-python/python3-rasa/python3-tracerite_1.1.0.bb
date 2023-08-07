@@ -11,8 +11,8 @@ PV = "1.1.0+git${SRCPV}"
 SRCREV = "c96c21f26393ddcf2472b92f7662c3e5664b0cb8"
 S = "${WORKDIR}/git"
 
-DEPENDS = "python3-html5tagger python3-setuptools-scm-native"
+DEPENDS += "python3-html5tagger python3-setuptools-scm-native"
 
 inherit setuptools3
 
-RDEPENDS_${PN} = "python3-html5tagger"
+RDEPENDS_${PN} += "python3-html5tagger"

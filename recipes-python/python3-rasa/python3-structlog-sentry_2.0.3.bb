@@ -11,7 +11,7 @@ PV = "2.0.3+git${SRCPV}"
 SRCREV = "3cae523da9fe6e022de7b6d283090ddb59966625"
 S = "${WORKDIR}/git"
 
-DEPENDS = " \
+DEPENDS += " \
     python3-structlog \
     python3-sentry-sdk \
     python3-urllib3 \
@@ -20,7 +20,7 @@ DEPENDS = " \
 
 inherit python_poetry_core
 
-RDEPENDS_${PN} = " \
+RDEPENDS_${PN} += " \
     python3-structlog \
     python3-sentry-sdk \
     python3-urllib3 \

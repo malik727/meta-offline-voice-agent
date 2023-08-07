@@ -8,9 +8,9 @@ PYPI_PACKAGE = "pyaml"
 SRC_URI[md5sum] = "a41620eeb64f4b460e6d23b98156780e"
 SRC_URI[sha256sum] = "b3f636b467864319d7ded1558f86bb305b8612a274f5d443a62dc5eceb1b7176"
 
-DEPENDS = "python3-pyyaml python3-setuptools-native"
+DEPENDS += "python3-pyyaml python3-setuptools-native"
 
 inherit pypi setuptools3
 
-RDEPENDS_${PN} = "python3-pyyaml"
+RDEPENDS_${PN} += "python3-pyyaml"
 BBCLASSEXTEND = "native"

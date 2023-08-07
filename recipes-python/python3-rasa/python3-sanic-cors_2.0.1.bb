@@ -8,14 +8,14 @@ PYPI_PACKAGE = "Sanic-Cors"
 SRC_URI[md5sum] = "9d4e56275332487fb6fdfe8644116e98"
 SRC_URI[sha256sum] = "4d2f26333d49db428217814c66e89fc3df20fc62a5ab518a71fa22e2e249e19d"
 
-DEPENDS = " \
+DEPENDS += " \
     python3-packaging \
     python3-sanic \
     "
 
 inherit pypi setuptools3
 
-RDEPENDS_${PN} = "\
+RDEPENDS_${PN} += "\
     python3-packaging \
     python3-sanic \
     "
