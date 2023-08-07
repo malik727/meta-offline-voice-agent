@@ -1,0 +1,61 @@
+From dedd112f7607ad9f4edd3e2aba60d9cb2cb59b2e Mon Sep 17 00:00:00 2001
+From: Malik Talha <talhamalik727x@gmail.com>
+Date: Mon, 7 Aug 2023 00:19:14 +0500
+Subject: [PATCH] structlog add setup file
+
+add setup.py to replace hatchling build system as its not supported
+---
+ setup.py | 44 ++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 44 insertions(+)
+ create mode 100644 setup.py
+
+diff --git a/setup.py b/setup.py
+new file mode 100644
+index 0000000..4bc2b79
+--- /dev/null
++++ b/setup.py
+@@ -0,0 +1,44 @@
++from setuptools import setup, find_packages
++
++setup(
++    name="structlog",
++    version="23.1.0",
++    dynamic=["readme", "version"],
++    description="Structured Logging for Python",
++    author="Hynek Schlawack",
++    author_email="hs@ox.cx",
++    url="https://github.com/hynek/structlog",
++    classifiers=[
++        "Development Status :: 5 - Production/Stable",
++        "License :: OSI Approved :: Apache Software License",
++        "License :: OSI Approved :: MIT License",
++        "Operating System :: OS Independent",
++        "Programming Language :: Python :: 3.8",
++        "Programming Language :: Python :: 3.9",
++        "Programming Language :: Python :: 3.10",
++        "Programming Language :: Python :: 3.11",
++        "Programming Language :: Python :: 3.12",
++        "Programming Language :: Python :: Implementation :: CPython",
++        "Programming Language :: Python :: Implementation :: PyPy",
++        "Topic :: System :: Logging",
++        "Typing :: Typed",
++    ],
++    keywords=["logging", "structured", "structure", "log"],
++    license="MIT OR Apache-2.0",
++    python_requires=">=3.8",
++    install_requires=[
++        "wheel",
++    ],
++    project_urls={
++        "Documentation": "https://www.structlog.org/",
++        "Changelog": "https://www.structlog.org/en/stable/changelog.html",
++        "Bug Tracker": "https://github.com/hynek/structlog/issues",
++        "Source Code": "https://github.com/hynek/structlog",
++        "Funding": "https://github.com/sponsors/hynek",
++        "Tidelift": "https://tidelift.com/subscription/pkg/pypi-structlog?utm_source=pypi-structlog&utm_medium=pypi",
++    },
++    packages=find_packages(where="src", exclude=["tests", "debug"]),
++    package_dir={"": "src"},
++    include_package_data=True,
++    zip_safe=False,
++)

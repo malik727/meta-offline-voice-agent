@@ -6,12 +6,13 @@ LIC_FILES_CHKSUM = "file://LICENSE.txt;md5=930bc50f846c55c70b79b78055ae3d9b"
 PYPI_PACKAGE = "rasa"
 
 SRC_URI += " \
-    file://0001-remove-group-from-poetry-as-its-not-supported.patch \
+    file://0001-rasa-remove-group-from-poetry-as-its-not-supported.patch \
 "
 SRC_URI[md5sum] = "7aab346588a3056b54ff783357e4d081"
 SRC_URI[sha256sum] = "21e57a99bdec8d9f36f7828985c8e3fb3bf3b2c3c94a856d3006e0a68b41a399"
 
 DEPENDS += " \
+    python3-six \
     python3-requests \
     python3-matplotlib \
     python3-absl \
@@ -31,7 +32,19 @@ DEPENDS += " \
     python3-networkx \
     python3-ujson \
     python3-dateutil \
+    python3-portalocker \
+    python3-pluggy \
+    python3-pycparser \
+    python3-pyparsing \
+    python3-wrapt \
+    python3-pykwalify \
+    python3-certifi \
+    python3-urllib3 \
+    python3-sentry-sdk \
+    python3-tzlocal \
     \
+    tensorflow \
+    tensorflow-estimator \
     python3-typing-utils \
     python3-aiogram \
     python3-aio-pika \
@@ -40,11 +53,20 @@ DEPENDS += " \
     python3-scikit-learn \
     python3-sklearn-crfsuite \
     python3-jsonpickle \
+    python3-ruamel.yaml \
+    python3-ruamel.yaml.clib \
+    python3-structlog \
+    python3-structlog-sentry \
+    python3-tarsafe \
+    python3-terminaltables \
+    python3-sanic \
+    python3-sanic-jwt \
 "
 
 inherit pypi python_poetry_core
 
 RDEPENDS:${PN} += " \
+    python3-six \
     python3-requests \
     python3-matplotlib \
     python3-absl \
@@ -63,7 +85,18 @@ RDEPENDS:${PN} += " \
     python3-networkx \
     python3-ujson \
     python3-dateutil \
+    python3-portalocker \
+    python3-pluggy \
+    python3-pycparser \
+    python3-pyparsing \
+    python3-wrapt \
+    python3-pykwalify \
+    python3-certifi \
+    python3-urllib3 \
+    python3-sentry-sdk \
     \
+    tensorflow \
+    tensorflow-estimator \
     python3-typing-utils \
     python3-aiogram \
     python3-aio-pika \
@@ -72,4 +105,19 @@ RDEPENDS:${PN} += " \
     python3-scikit-learn \
     python3-sklearn-crfsuite \
     python3-jsonpickle \
+    python3-ruamel.yaml \
+    python3-ruamel.yaml.clib \
+    python3-structlog \
+    python3-structlog-sentry \
+    python3-tarsafe \
+    python3-terminaltables \
+    python3-sanic \
+    python3-sanic-jwt \
 "
+
+do_install:append() {
+    # Remove README and LICENSE from the site-packages directory as they shouldn't be placed there,
+    # it causes conflicts.
+    rm -f ${D}${libdir}/python3.10/site-packages/README.md
+    rm -f ${D}${libdir}/python3.10/site-packages/LICENSE.txt
+}

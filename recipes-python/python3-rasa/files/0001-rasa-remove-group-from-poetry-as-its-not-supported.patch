@@ -1,0 +1,23 @@
+From db7ca896e22ae838385d5928fb5a0e8b80630360 Mon Sep 17 00:00:00 2001
+From: Malik Talha <talhamalik727x@gmail.com>
+Date: Mon, 24 Jul 2023 12:17:35 +0500
+Subject: [PATCH] rasa remove group from poetry as its not supported 
+
+poetry version < 1.20 deos not support group in pyproject.toml
+---
+ pyproject.toml | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/pyproject.toml b/pyproject.toml
+index 9fe32cb..9ee4b5f 100644
+--- a/pyproject.toml
++++ b/pyproject.toml
+@@ -300,7 +300,7 @@ extras = [ "tls", "srv",]
+ git = "https://github.com/RasaHQ/pytest-sanic"
+ branch = "fix_signal_issue"
+ 
+-[tool.poetry.group.dev.dependencies]
++[tool.poetry.dev-dependencies]
+ ruff = ">=0.0.255,<0.0.256"
+ docker = "^6.0.1"
+ pytest-cov = "^4.0.0"

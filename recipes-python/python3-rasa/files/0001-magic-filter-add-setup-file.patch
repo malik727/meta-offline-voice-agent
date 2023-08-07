@@ -1,0 +1,72 @@
+From d5a4cba0199c269e13cf6f25daf49438cd1b5c32 Mon Sep 17 00:00:00 2001
+From: Malik Talha <talhamalik727x@gmail.com>
+Date: Sun, 6 Aug 2023 23:54:27 +0500
+Subject: [PATCH] magic-filter add setup file
+
+setup.py backend instead of hatchling which is not supported
+---
+ setup.py | 55 +++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 55 insertions(+)
+ create mode 100644 setup.py
+
+diff --git a/setup.py b/setup.py
+new file mode 100644
+index 0000000..b98f77a
+--- /dev/null
++++ b/setup.py
+@@ -0,0 +1,55 @@
++from setuptools import setup, find_packages
++
++packages = [p for p in find_packages()
++            if "tests" not in p and "debug" not in p]
++
++setup(
++    name="magic-filter",
++    version="0.1.0",  # Set the appropriate version number
++    description="",
++    long_description="",  # Add your long description here
++    long_description_content_type="text/markdown",
++    author="Alex Root Junior",
++    author_email="pypi@aiogram.dev",
++    url="https://github.com/aiogram/magic-filter",
++    classifiers=[
++        "Development Status :: 3 - Alpha",
++        "License :: OSI Approved :: MIT License",
++        "Programming Language :: Python",
++        "Programming Language :: Python :: 3.7",
++        "Programming Language :: Python :: 3.8",
++        "Programming Language :: Python :: 3.9",
++        "Programming Language :: Python :: 3.10",
++        "Programming Language :: Python :: 3.11",
++        "Programming Language :: Python :: Implementation :: CPython",
++        "Topic :: Utilities",
++        "Typing :: Typed",
++    ],
++    keywords=["magic", "filter", "validation"],
++    license="MIT",
++    python_requires=">=3.7",
++    install_requires=[
++        'wheel',
++    ], 
++    extras_require={
++        "dev": [
++            "pre-commit~=2.20.0",
++            "pytest~=7.1.3",
++            "pytest-cov~=3.0.0",
++            "pytest-html~=3.1.1",
++            "flake8~=5.0.4",
++            "mypy~=0.971",
++            "black~=22.8.0",
++            "isort~=5.10.1",
++            "types-setuptools~=65.3.0",
++        ]
++    },
++    project_urls={
++        "Documentation": "https://docs.aiogram.dev/en/dev-3.x/dispatcher/filters/magic_filters.html",
++        "Issues": "https://github.com/aiogram/magic-filter/issues",
++        "Source": "https://github.com/aiogram/magic-filter",
++    },
++    packages=packages,
++    include_package_data=True,
++    zip_safe=False,
++)
