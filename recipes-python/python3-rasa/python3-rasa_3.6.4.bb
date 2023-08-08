@@ -45,6 +45,9 @@ RDEPENDS:${PN} += " \
     python3-pymongo \
     python3-sqlalchemy \
     python3-socketio \
+    python3-cachecontrol \
+    python3-google-auth \
+    python3-google-auth-oauthlib \
     \
     tensorflow \
     tensorflow-estimator \
