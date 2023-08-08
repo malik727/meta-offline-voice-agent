@@ -27,6 +27,7 @@ RDEPENDS:${PN} += " \
     python3-typing-extensions \
     python3-pytz \
     python3-protobuf \
+    python3-regex \
     python3-pydot \
     python3-packaging \
     python3-jsonschema \
