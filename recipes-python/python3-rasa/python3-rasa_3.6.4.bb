@@ -75,6 +75,7 @@ RDEPENDS:${PN} += " \
     python3-babel \
     python3-twilio \
     python3-webexteamssdk \
+    python3-apscheduler \
 "
 
 do_install:append() {
