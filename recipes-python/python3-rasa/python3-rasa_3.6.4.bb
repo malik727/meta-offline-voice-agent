@@ -68,6 +68,10 @@ RDEPENDS:${PN} += " \
     python3-questionary \
     python3-rasa-sdk \
     python3-fbmessenger \
+    python3-slack-sdk \
+    python3-babel \
+    python3-twilio \
+    python3-webexteamssdk \
 "
 
 do_install:append() {
