@@ -6,10 +6,10 @@ The `meta-offline-voice-agent` is an AGL Layer that enables Offline Speech Recog
 - [Layer Status](#layer-status)
 - [Working Features](#working-features)
 - [Testing Features on AGL](#testing-features-on-agl)
-    - Build Layer
-    - Test Vosk
-    - Test Snips
-    - Test RASA
+    - [Build Layer](#build-layer)
+    - [Test Vosk](#test-vosk)
+    - [Test Snips](#test-snips)
+    - [Test RASA](#test-rasa)
 - [Supported Targets](#supported-targets)
 - [Maintainers](#maintainers)
 
