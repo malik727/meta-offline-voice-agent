@@ -12,4 +12,4 @@ DEPENDS += "python3-ruamel.yaml.clib python3-setuptools-native"
 
 inherit pypi setuptools3
 
-RDEPENDS_${PN} += "python3-ruamel.yaml.clib"
+RDEPENDS:${PN} += "python3-ruamel.yaml.clib"

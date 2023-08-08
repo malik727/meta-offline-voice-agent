@@ -25,5 +25,5 @@ setup(
 EOF
 }
 
-RDEPENDS_${PN} += "python3-flit-core"
+RDEPENDS:${PN} += "python3-flit-core"
 BBCLASSEXTEND = "native"

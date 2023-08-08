@@ -12,4 +12,4 @@ DEPENDS += "python3-pytz"
 
 inherit pypi setuptools3
 
-RDEPENDS_${PN} += "python3-pytz"
+RDEPENDS:${PN} += "python3-pytz"

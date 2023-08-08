@@ -20,7 +20,7 @@ DEPENDS += " \
 
 inherit python_poetry_core
 
-RDEPENDS_${PN} += " \
+RDEPENDS:${PN} += " \
     python3-structlog \
     python3-sentry-sdk \
     python3-urllib3 \

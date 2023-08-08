@@ -24,7 +24,7 @@ DEPENDS += " \
 
 inherit pypi setuptools3
 
-RDEPENDS_${PN} += "\
+RDEPENDS:${PN} += "\
     python3-websockets \
     python3-typing-extensions \
     python3-ujson \

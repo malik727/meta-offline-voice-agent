@@ -22,4 +22,4 @@ inherit cargo python_setuptools3_rust
 
 do_compile[network] = "1"
 
-RDEPENDS_${PN} += "python3-future"
+RDEPENDS:${PN} += "python3-future"

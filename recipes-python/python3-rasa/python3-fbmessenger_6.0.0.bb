@@ -15,4 +15,4 @@ DEPENDS += "python3-requests"
 
 inherit setuptools3
 
-RDEPENDS_${PN} += "python3-requests"
+RDEPENDS:${PN} += "python3-requests"

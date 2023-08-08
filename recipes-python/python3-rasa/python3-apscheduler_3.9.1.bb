@@ -17,7 +17,7 @@ DEPENDS += " \
 
 inherit pypi python_setuptools_build_meta
 
-RDEPENDS_${PN} += " \
+RDEPENDS:${PN} += " \
     python3-attrs \
     python3-anyio \
     python3-tzlocal \

@@ -12,4 +12,4 @@ DEPENDS += "python3-pyjwt"
 
 inherit pypi setuptools3
 
-RDEPENDS_${PN} += "python3-pyjwt"
+RDEPENDS:${PN} += "python3-pyjwt"

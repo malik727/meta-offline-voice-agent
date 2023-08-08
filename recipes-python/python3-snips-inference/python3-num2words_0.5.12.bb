@@ -12,5 +12,5 @@ DEPENDS += "python3-docopt python3-setuptools-native"
 
 inherit pypi setuptools3
 
-RDEPENDS_${PN} += "python3-docopt"
+RDEPENDS:${PN} += "python3-docopt"
 BBCLASSEXTEND = "native"

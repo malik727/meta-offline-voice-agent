@@ -15,7 +15,7 @@ DEPENDS += " \
 
 inherit pypi setuptools3
 
-RDEPENDS_${PN} += " \
+RDEPENDS:${PN} += " \
     python3-google-auth \
     python3-requests-oauthlib \
     "

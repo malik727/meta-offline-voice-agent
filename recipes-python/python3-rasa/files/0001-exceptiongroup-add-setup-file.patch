@@ -1,0 +1,46 @@
+From e3f45073c4898fc99cab6f78da1cb3e8a3df9aae Mon Sep 17 00:00:00 2001
+From: Malik Talha <talhamalik727x@gmail.com>
+Date: Tue, 8 Aug 2023 16:40:54 +0500
+Subject: [PATCH] exceptiongroup add setup file
+
+add setup.py to replace flit_scm build system as its not supported
+---
+ setup.py | 29 +++++++++++++++++++++++++++++
+ 1 file changed, 29 insertions(+)
+ create mode 100644 setup.py
+
+diff --git a/setup.py b/setup.py
+new file mode 100644
+index 0000000..2a7b6ff
+--- /dev/null
++++ b/setup.py
+@@ -0,0 +1,29 @@
++from setuptools import setup, find_packages
++
++setup(
++    name="exceptiongroup",
++    version="1.1.2",
++    description="Backport of PEP 654 (exception groups)",
++    classifiers=[
++        "Development Status :: 5 - Production/Stable",
++        "Intended Audience :: Developers",
++        "License :: OSI Approved :: MIT License",
++        "Programming Language :: Python",
++        "Programming Language :: Python :: 3 :: Only",
++        "Typing :: Typed",
++    ],
++    author="Alex Grönholm",
++    author_email="alex.gronholm@nextday.fi",
++    license="MIT",
++    python_requires=">=3.7",
++    packages=find_packages(where="src", exclude=["tests", "debug"]),
++    package_dir={"": "src"},
++    include_package_data=True,
++    install_requires=[],
++    extras_require={"test": ["pytest >= 6"]},
++    project_urls={
++        "Changelog": "https://github.com/agronholm/exceptiongroup/blob/main/CHANGES.rst",
++        "Source code": "https://github.com/agronholm/exceptiongroup",
++        "Issue Tracker": "https://github.com/agronholm/exceptiongroup/issues",
++    },
++)

@@ -12,4 +12,4 @@ DEPENDS += "python3-requests"
 
 inherit pypi setuptools3
 
-RDEPENDS_${PN} += "python3-requests"
+RDEPENDS:${PN} += "python3-requests"

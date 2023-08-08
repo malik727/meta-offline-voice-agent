@@ -15,4 +15,4 @@ DEPENDS += "python3-html5tagger python3-setuptools-scm-native"
 
 inherit setuptools3
 
-RDEPENDS_${PN} += "python3-html5tagger"
+RDEPENDS:${PN} += "python3-html5tagger"

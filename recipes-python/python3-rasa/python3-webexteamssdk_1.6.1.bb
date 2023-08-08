@@ -17,7 +17,7 @@ DEPENDS += " \
 
 inherit pypi setuptools3
 
-RDEPENDS_${PN} += " \
+RDEPENDS:${PN} += " \
     python3-future \
     python3-requests \
     python3-pyjwt \

@@ -60,7 +60,6 @@ RDEPENDS:${PN} += " \
     python3-sklearn-crfsuite \
     python3-jsonpickle \
     python3-ruamel.yaml \
-    python3-ruamel.yaml.clib \
     python3-structlog \
     python3-structlog-sentry \
     python3-tarsafe \
@@ -76,6 +75,7 @@ RDEPENDS:${PN} += " \
     python3-twilio \
     python3-webexteamssdk \
     python3-apscheduler \
+    python3-boto3 \
 "
 
 do_install:append() {

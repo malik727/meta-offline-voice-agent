@@ -19,7 +19,7 @@ DEPENDS += " \
 
 inherit pypi setuptools3
 
-RDEPENDS_${PN} += " \
+RDEPENDS:${PN} += " \
     python3-tabulate \
     python3-python-crfsuite \
     python3-six \

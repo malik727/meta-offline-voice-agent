@@ -15,4 +15,4 @@ DEPENDS += "python3-fire"
 
 inherit setuptools3
 
-RDEPENDS_${PN} += "python3-fire"
+RDEPENDS:${PN} += "python3-fire"

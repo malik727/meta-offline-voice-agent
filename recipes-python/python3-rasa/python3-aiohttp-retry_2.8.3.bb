@@ -18,7 +18,7 @@ DEPENDS += " \
 
 inherit setuptools3
 
-RDEPENDS_${PN} += " \
+RDEPENDS:${PN} += " \
     python3-aiohttp \
     python3-yarl \
     "

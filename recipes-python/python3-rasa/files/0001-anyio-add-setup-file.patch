@@ -1,0 +1,76 @@
+From 4a1ad21ba577466ae70a8b6ed6d8c4e12b0cb851 Mon Sep 17 00:00:00 2001
+From: Malik Talha <talhamalik727x@gmail.com>
+Date: Tue, 8 Aug 2023 17:26:30 +0500
+Subject: [PATCH] anyio add setup file
+
+add setup.py to replace build_meta system as its not working properly
+---
+ setup.py | 59 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 59 insertions(+)
+ create mode 100644 setup.py
+
+diff --git a/setup.py b/setup.py
+new file mode 100644
+index 0000000..f15d18b
+--- /dev/null
++++ b/setup.py
+@@ -0,0 +1,59 @@
++from setuptools import setup, find_packages
++
++setup(
++    name="anyio",
++    description="High level compatibility layer for multiple asynchronous event loop implementations",
++    version="3.7.1",
++    classifiers=[
++        "Development Status :: 5 - Production/Stable",
++        "Intended Audience :: Developers",
++        "License :: OSI Approved :: MIT License",
++        "Framework :: AnyIO",
++        "Typing :: Typed",
++        "Programming Language :: Python",
++        "Programming Language :: Python :: 3",
++        "Programming Language :: Python :: 3.8",
++        "Programming Language :: Python :: 3.9",
++        "Programming Language :: Python :: 3.10",
++        "Programming Language :: Python :: 3.11",
++        "Programming Language :: Python :: 3.12",
++    ],
++    author="Alex Grönholm",
++    author_email="alex.gronholm@nextday.fi",
++    license="MIT",
++    python_requires=">=3.8",
++    install_requires=[
++        "exceptiongroup >= 1.0.2; python_version < '3.11'",
++        "idna >= 2.8",
++        "sniffio >= 1.1",
++    ],
++    packages=find_packages(where="src", exclude=["tests", "debug"]),
++    package_dir={"": "src"},
++    include_package_data=True,
++    extras_require={
++        "trio": ["trio >= 0.22"],
++        "test": [
++            "anyio[trio]",
++            "coverage[toml] >= 4.5",
++            "hypothesis >= 4.0",
++            "psutil >= 5.9",
++            "pytest >= 7.0",
++            "pytest-mock >= 3.6.1",
++            "trustme",
++            "uvloop >= 0.17; python_version < '3.12' and platform_python_implementation == 'CPython' and platform_system != 'Windows'",
++        ],
++        "doc": [
++            "packaging",
++            "Sphinx ~= 6.1.0",
++            "sphinx_rtd_theme",
++            "sphinxcontrib-jquery",
++            "sphinx-autodoc-typehints >= 1.2.0",
++        ],
++    },
++    project_urls={
++        "Documentation": "https://anyio.readthedocs.io/en/latest/",
++        "Changelog": "https://anyio.readthedocs.io/en/stable/versionhistory.html",
++        "Source code": "https://github.com/agronholm/anyio",
++        "Issue tracker": "https://github.com/agronholm/anyio/issues",
++    },
++)

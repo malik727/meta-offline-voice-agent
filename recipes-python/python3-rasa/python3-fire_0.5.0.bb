@@ -12,4 +12,4 @@ DEPENDS += "python3-six python3-termcolor"
 
 inherit pypi setuptools3
 
-RDEPENDS_${PN} += "python3-six python3-termcolor"
+RDEPENDS:${PN} += "python3-six python3-termcolor"

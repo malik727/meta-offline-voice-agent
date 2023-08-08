@@ -12,5 +12,5 @@ DEPENDS += "python3-pyyaml python3-setuptools-native"
 
 inherit pypi setuptools3
 
-RDEPENDS_${PN} += "python3-pyyaml"
+RDEPENDS:${PN} += "python3-pyyaml"
 BBCLASSEXTEND = "native"
