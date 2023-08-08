@@ -47,7 +47,6 @@ RDEPENDS:${PN} += " \
     python3-socketio \
     python3-cachecontrol \
     python3-google-auth \
-    python3-google-auth-oauthlib \
     \
     tensorflow \
     tensorflow-estimator \
@@ -74,8 +73,10 @@ RDEPENDS:${PN} += " \
     python3-babel \
     python3-twilio \
     python3-webexteamssdk \
+    python3-google-auth-oauthlib \
     python3-apscheduler \
     python3-boto3 \
+    python3-dask \
 "
 
 do_install:append() {
