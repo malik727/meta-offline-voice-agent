@@ -48,7 +48,7 @@ $ runqemu tmp/deploy/images/qemux86-64/agl-demo-platform-qemux86-64.qemuboot.con
 ```
 
 ### Test Vosk
-(Not Recommended) The simplest way to test Vosk API is using the following command: 
+(**Not Recommended**) The simplest way to test Vosk API is by using the following command: 
 ```shell
 $ ptest-runner python3-vosk-api
 ```
@@ -62,6 +62,12 @@ EXTRA_IMAGE_FEATURES += "ptest-pkgs"
 The above method may be the easiest one but it's not recommended because `ptests` increase the image build times by a substantial amount. You can look into the official [vosk-api docs](https://alphacephei.com/vosk/install) for usage and other ways of testing.
 
 ### Test Snips
+(**Important**) Currently, there are some library linking issues between NumPy, SciPy, and OpenBLAS. While we investigate and fix them you need to use `LD_PRELOAD` method as a workaround for Snips to work properly. Input the following command as soon as you boot into the target image:
+```shell
+$ export LD_PRELOAD=/usr/lib/libopenblas.so.0
+```
+
+
 In order to test the Snips NLU Intent Engine you can use the sample [pre-trained model](https://github.com/malik727/nlu-model-agl), by default it automatically gets built into the target image when you include this layer. To perform inference using this model you can run the following command inside your target image:
 ```shell
 $ nlu-inference-agl parse /user/share/nlu/snips/model/ -q "your command here"
@@ -70,6 +76,11 @@ $ nlu-inference-agl parse /user/share/nlu/snips/model/ -q "your command here"
 This is just a sample model and may not be able to handle all types of commands. You can always train your own intent engine model using your custom dataset, for more details on how to do that you can look into the README files of [snips-sdk-agl](https://github.com/malik727/snips-sdk-agl), [snips-model-agl](https://github.com/malik727/nlu-model-agl), and [snips-inference-agl](https://github.com/malik727/snips-inference-agl).
 
 ### Test RASA
+(**Important**) Currently, there are some library linking issues between NumPy, SciPy, and OpenBLAS. While we investigate and fix them you need to use `LD_PRELOAD` method as a workaround for RASA to work properly. Input the following command as soon as you boot into the target image:
+```shell
+$ export LD_PRELOAD=/usr/lib/libopenblas.so.0
+```
+
 In order to test the RASA NLU Intent Engine you can use the sample [pre-trained model](https://github.com/malik727/rasa-model-agl), by default it automatically gets built into the target image when you include this layer. To perform inference using this model you can run the following command inside your target image:
 ```shell
 $ rasa shell -m /user/share/nlu/rasa/models/
@@ -78,7 +89,7 @@ $ rasa shell -m /user/share/nlu/rasa/models/
 This will open an interactive shell where you can issue commands and get related results. This is just a sample model and may not be able to handle all types of commands. You can always train your own RASA intent engine model using your custom dataset by following the official [RASA docs](https://rasa.com/docs/rasa/).
 
 ## Supported Targets
-Currently, following targets are fully supported:
+Currently, the following targets are fully supported:
 - QEMU x86-64 (work in progress)
 
 ## Maintainers
