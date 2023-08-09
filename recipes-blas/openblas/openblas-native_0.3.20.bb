@@ -18,10 +18,8 @@ LIC_FILES_CHKSUM = "file://LICENSE;md5=5adf4792c949a00013ce25d476a2abc0"
 
 SRC_URI = "git://github.com/xianyi/OpenBLAS.git;protocol=https;branch=develop"
 
-# SRCREV = "fab746240cc7e95569fde23af8942f8bc97d6d40"
-SRCREV = "0b678b19dc03f2a999d6e038814c4c50b9640a4e"
-
 S = "${WORKDIR}/git"
+SRCREV = "0b678b19dc03f2a999d6e038814c4c50b9640a4e"
 
 # Used for TARGET=... , documented in TargetList.txt
 BLAS_X86_ARCH ?= "ATOM"

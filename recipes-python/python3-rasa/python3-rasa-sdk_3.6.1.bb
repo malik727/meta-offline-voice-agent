@@ -18,7 +18,6 @@ DEPENDS += " \
     python3-websockets \
     python3-prompt-toolkit \
     python3-pluggy \
-    \
     python3-ruamel.yaml \
     python3-sanic \
     python3-sanic-cors \
@@ -32,7 +31,6 @@ RDEPENDS:${PN} += " \
     python3-websockets \
     python3-prompt-toolkit \
     python3-pluggy \
-    \
     python3-ruamel.yaml \
     python3-sanic \
     python3-sanic-cors \

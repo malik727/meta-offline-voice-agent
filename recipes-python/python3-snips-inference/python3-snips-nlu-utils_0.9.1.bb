@@ -11,9 +11,7 @@ PV = "0.9.1+git${SRCPV}"
 S = "${WORKDIR}/git/python"
 SRCREV = "b632934413bf84a733cd745db33a0c83640eada8"
 
-DEPENDS += " \
-    python3-setuptools-rust-native \
-    "
+DEPENDS += "python3-setuptools-rust-native"
 
 require ${BPN}-crates.inc
 

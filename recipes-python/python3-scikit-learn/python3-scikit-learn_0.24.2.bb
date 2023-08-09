@@ -10,7 +10,11 @@ SRC_URI = "git://github.com/scikit-learn/scikit-learn.git;branch=0.24.X;protocol
 SRCREV = "15a949460dbf19e5e196b8ef48f9712b72a3b3c3"
 S = "${WORKDIR}/git"
 
+DEPENDS += "python3-numpy-native python3-scipy-native python3-cython-native python3-numpy python3-scipy python3-cython"
+
 inherit setuptools3 pkgconfig python3-dir
+
+RDEPENDS:${PN} += "python3-numpy python3-scipy python3-joblib python3-threadpoolctl python3-pytest"
 
 export PYTHON_CROSSENV = "1"
 export SKLEARN_BUILD_PARALLEL = "${@oe.utils.cpu_count()}"
@@ -30,6 +34,3 @@ do_compile:prepend() {
 	sed -i 's&prefix=${pkgdir}&prefix=${STAGING_DIR_TARGET}/usr/lib/python${PYTHON_BASEVERSION}/site-packages/numpy/core&g' ${WORKDIR}/npy-pkg-config/npymath.ini
 	sed -i 's&prefix=${pkgdir}&prefix=${STAGING_DIR_TARGET}/usr/lib/python${PYTHON_BASEVERSION}/site-packages/numpy/core&g' ${WORKDIR}/npy-pkg-config/mlib.ini
 }
-
-DEPENDS += "python3-numpy-native python3-scipy-native python3-cython-native python3-numpy python3-scipy python3-cython"
-RDEPENDS:${PN} += "python3-numpy python3-scipy python3-joblib python3-threadpoolctl python3-pytest"

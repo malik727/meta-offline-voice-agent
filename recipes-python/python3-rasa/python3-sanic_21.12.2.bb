@@ -14,7 +14,6 @@ DEPENDS += " \
     python3-ujson \
     python3-multidict \
     python3-aiofiles \
-    \
     python3-sanic-routing \
     python3-httptools \
     python3-uvloop \
@@ -30,7 +29,6 @@ RDEPENDS:${PN} += "\
     python3-ujson \
     python3-multidict \
     python3-aiofiles \
-    \
     python3-sanic-routing \
     python3-httptools \
     python3-uvloop \

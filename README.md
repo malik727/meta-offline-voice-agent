@@ -70,7 +70,7 @@ $ export LD_PRELOAD=/usr/lib/libopenblas.so.0
 
 In order to test the Snips NLU Intent Engine you can use the sample [pre-trained model](https://github.com/malik727/nlu-model-agl), by default it automatically gets built into the target image when you include this layer. To perform inference using this model you can run the following command inside your target image:
 ```shell
-$ nlu-inference-agl parse /user/share/nlu/snips/model/ -q "your command here"
+$ nlu-inference-agl parse /usr/share/nlu/snips/model/ -q "your command here"
 ```
 
 This is just a sample model and may not be able to handle all types of commands. You can always train your own intent engine model using your custom dataset, for more details on how to do that you can look into the README files of [snips-sdk-agl](https://github.com/malik727/snips-sdk-agl), [snips-model-agl](https://github.com/malik727/nlu-model-agl), and [snips-inference-agl](https://github.com/malik727/snips-inference-agl).
@@ -83,7 +83,7 @@ $ export LD_PRELOAD=/usr/lib/libopenblas.so.0
 
 In order to test the RASA NLU Intent Engine you can use the sample [pre-trained model](https://github.com/malik727/rasa-model-agl), by default it automatically gets built into the target image when you include this layer. To perform inference using this model you can run the following command inside your target image:
 ```shell
-$ rasa shell -m /user/share/nlu/rasa/models/
+$ rasa shell -m /usr/share/nlu/rasa/models/
 ```
 
 This will open an interactive shell where you can issue commands and get related results. This is just a sample model and may not be able to handle all types of commands. You can always train your own RASA intent engine model using your custom dataset by following the official [RASA docs](https://rasa.com/docs/rasa/).

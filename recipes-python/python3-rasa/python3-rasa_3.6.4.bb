@@ -14,7 +14,6 @@ SRC_URI[sha256sum] = "21e57a99bdec8d9f36f7828985c8e3fb3bf3b2c3c94a856d3006e0a68b
 inherit pypi python_poetry_core
 
 RDEPENDS:${PN} += " \
-    python3-six \
     python3-requests \
     python3-matplotlib \
     python3-absl \
@@ -36,21 +35,14 @@ RDEPENDS:${PN} += " \
     python3-dateutil \
     python3-portalocker \
     python3-pluggy \
-    python3-pycparser \
-    python3-pyparsing \
-    python3-wrapt \
     python3-pykwalify \
-    python3-certifi \
-    python3-urllib3 \
     python3-sentry-sdk \
     python3-pymongo \
     python3-sqlalchemy \
     python3-socketio \
     python3-cachecontrol \
     python3-google-auth \
-    \
     tensorflow \
-    tensorflow-estimator \
     python3-typing-utils \
     python3-aiogram \
     python3-aio-pika \
@@ -65,7 +57,9 @@ RDEPENDS:${PN} += " \
     python3-tarsafe \
     python3-terminaltables \
     python3-sanic \
+    python3-sanic-cors \
     python3-sanic-jwt \
+    python3-sanic-routing \
     python3-randomname \
     python3-questionary \
     python3-rasa-sdk \
@@ -74,7 +68,6 @@ RDEPENDS:${PN} += " \
     python3-babel \
     python3-twilio \
     python3-webexteamssdk \
-    python3-google-auth-oauthlib \
     python3-apscheduler \
     python3-boto3 \
     python3-dask \
